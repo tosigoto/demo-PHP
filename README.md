@@ -20,11 +20,12 @@
 * MySQL 8.0.35  
   * Config::DB_NAMEに設定した名前のデータベース  
       DB作成SQL例：  
-        CREATE DATABASE IF NOT EXISTS de_demo CHARACTER SET utf8mb4;  
+        CREATE DATABASE IF NOT EXISTS db_demo CHARACTER SET utf8mb4;  
   * Config::DB_USERに設定した名前 と DB_PASSに設定したパスワード のユーザー  
       ユーザー設定例：  
         CREATE user demouser@localhost identified by 'demopass';  
-        GRANT ALL PRIVILEGES ON db_demo.* TO demouser@localhost;  
+        GRANT ALL PRIVILEGES ON db_demo.* TO demouser@localhost;
+        FLUSH PRIVILEGES;
 * Apache 2.4.52  
 * ダミー個人情報データ  
   個人情報テストデータジェネレーター( https://testdata.userlocal.jp/ )にて作成。  
