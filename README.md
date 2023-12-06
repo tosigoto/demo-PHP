@@ -24,8 +24,8 @@
   * Config::DB_USERに設定した名前 と DB_PASSに設定したパスワード のユーザー  
       ユーザー設定例：  
         CREATE user demouser@localhost identified by 'demopass';  
-        GRANT ALL PRIVILEGES ON db_demo.* TO demouser@localhost;
-        FLUSH PRIVILEGES;
+        GRANT ALL PRIVILEGES ON db_demo.* TO demouser@localhost;  
+        FLUSH PRIVILEGES;  
 * Apache 2.4.52  
 * ダミー個人情報データ  
   個人情報テストデータジェネレーター( https://testdata.userlocal.jp/ )にて作成。  
