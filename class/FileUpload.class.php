@@ -13,7 +13,7 @@ class FileUpload
 	 * @param int $permissions  アップロードされたファイルのパーミッション
 	 * @return array $resultAry  ['ok' => true or false, 'msg' => メッセージ]
 	 */
-	final public static function doit($paramName, $destinationDir, $permissions = 0644)
+	final public static function doit($paramName)
 	{
 		/**
 		 * @var array アップロード結果を返す。
