@@ -37,11 +37,7 @@ class Config
 	 * @var string inputタグのnameパラメータ
 	 */
 	const UPLOAD_FILE_PARAM_NAME = 'upfile';
-	/**
-	 * @var string ファイルのアップロード先ディレクトリ
-	 */
-	const UPLOAD_DIR_NAME = 'upload';
-
+	
 	/**
 	 * 計算結果の画面にデバッグ情報を表示するGETパラメータ
 	 */
