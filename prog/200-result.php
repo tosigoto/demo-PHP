@@ -31,7 +31,7 @@ require_once '../class/FileUpload.class.php';
 /**
  * @var array CSVファイルアップロードの結果とメッセージ
  */
-$csvUploadResultAry = FileUpload::doit(Config::UPLOAD_FILE_PARAM_NAME, '../' . Config::UPLOAD_DIR_NAME);
+$csvUploadResultAry = FileUpload::doit(Config::UPLOAD_FILE_PARAM_NAME);
 if ($csvUploadResultAry['ok'] === true)
 {
 	$tableName = Config::DB_TABLE_PREFIX . (new DateTime())->format('Ymd_His') . '_' . substr(bin2hex(random_bytes(32)), 0, 8);
