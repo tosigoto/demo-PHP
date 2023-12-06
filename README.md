@@ -8,12 +8,11 @@
 │   ├── Config.class.php  設定値クラス  
 │   ├── DbImport.class.php  CSVファイルをDBにインポートするクラス  
 │   └── FileUpload.class.php  ファイルをアップロードするクラス  
-├── lib  
-│   └── chart.js  グラフ表示JS  
-├── prog  
-│   ├── 100-upload.php  ここからファイルのアップロードを行う　＝＞　200-result.phpに遷移する  
-│   └── 200-result.php  計算結果を表示する  
-└── upload  ファイルアップロード先ディレクトリ。要パーミッション:0750  
+└── prog  ドキュメントルート  
+│       ├── 100-upload.php  ここからファイルのアップロードを行う　＝＞　200-result.phpに遷移する  
+│       ├── 200-result.php  計算結果を表示する  
+│       └── lib/chart.js  グラフ表示JS  
+
 
 ## 動作確認環境  
 * PHP 8.1.2  
