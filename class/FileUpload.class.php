@@ -9,8 +9,6 @@ class FileUpload
 	 * ファイルをアップロードする。
 	 *
 	 * @param string $paramName  inputタグのnameパラメータ
-	 * @param string $destinationDir  アップロードされたファイルの移動先パス
-	 * @param int $permissions  アップロードされたファイルのパーミッション
 	 * @return array $resultAry  ['ok' => true or false, 'msg' => メッセージ]
 	 */
 	final public static function doit($paramName)
