@@ -80,7 +80,7 @@ else
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title><?php echo PAGE_TITLE; ?></title>
-	<script src="../lib/chart.js" type="text/javascript"></script>
+	<script src="lib/chart.js" type="text/javascript"></script>
 	<style>
 	html, body { width:100%; height:100%; margin:0px; padding:0px; }
 
