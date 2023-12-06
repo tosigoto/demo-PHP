@@ -9,9 +9,9 @@
 │   ├── DbImport.class.php  CSVファイルをDBにインポートするクラス  
 │   └── FileUpload.class.php  ファイルをアップロードするクラス  
 └── prog  ドキュメントルート  
-│       ├── 100-upload.php  ここからファイルのアップロードを行う　＝＞　200-result.phpに遷移する  
-│       ├── 200-result.php  計算結果を表示する  
-│       └── lib/chart.js  グラフ表示JS  
+│   ├── 100-upload.php  ここからファイルのアップロードを行う　＝＞　200-result.phpに遷移する  
+│   ├── 200-result.php  計算結果を表示する  
+│   └── lib/chart.js  グラフ表示JS  
 
 
 ## 動作確認環境  
