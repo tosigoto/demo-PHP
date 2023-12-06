@@ -93,17 +93,33 @@ class DbImport
 		}
 
 		$extractedCsv = [$newColumnAry];
-		foreach (array_slice($csv, 1) as $csvRow)
+		$rowCounterMax = count($csv);
+		for ($rowCounter = 1; $rowCounter < $rowCounterMax; $rowCounter++)
 		{
+			$csvRow = $csv[$rowCounter];
 			/**
 			 * @var array 必要なデータの配列
 			 */
 			$matchedValueAry = [];
+			/**
+			 * @var bool データがある行かどうか
+			 */
+			$isValidRow = true;
 			foreach ($requiredColumnsIndexAry as $i)
 			{
+				// データがない行はDBに取り込まない
+				if (isset($csvRow[$i]) === false)
+				{
+					$isValidRow = false;
+					break;
+				}
 				$matchedValueAry[] = $csvRow[$i];
 			}
-			$extractedCsv[] = $matchedValueAry;
+			// データがある行はDBに取り込む
+			if ($isValidRow === true)
+			{
+				$extractedCsv[] = $matchedValueAry;
+			}
 		}
 
 		return $extractedCsv;
@@ -140,12 +156,14 @@ class DbImport
 		$stmt = $pdo->prepare($sql);
 
 		$pdo->beginTransaction();
-		foreach (array_slice($csv, 1) as $row)
+		$rowCounterMax = count($csv);
+		for ($rowCounter = 1; $rowCounter < $rowCounterMax; $rowCounter++)
 		{
+			$csvRow = $csv[$rowCounter];
 			// パラメータをバインド
 			foreach ($columns as $idx => $col)
 			{
-				$value = $row[$idx] ?? '';
+				$value = $csvRow[$idx] ?? '';
 				$paramType = in_array($col, $intTypeColumnsAry) ? PDO::PARAM_INT : PDO::PARAM_STR;
 
 				$stmt->bindValue($idx + 1, $value, $paramType); // パラメータは1から始まるため、$idx + 1 としている。
