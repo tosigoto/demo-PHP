@@ -126,8 +126,10 @@ class Calc
 
 		// トランザクションを開始する
 		$pdo->beginTransaction();
-		foreach (array_slice($idAndAddressAry, 1) as $ary)
+		$imax = count($idAndAddressAry);
+		for ($i = 1; $i < $imax; $i++)
 		{
+			$ary = $idAndAddressAry[$i];
 			$id = $ary[0];
 			$address = $ary[1];
 
@@ -176,8 +178,10 @@ class Calc
 	 */
 	private function getLabelDataDebug(&$resultAry, &$labelBuf, &$dataBuf, &$debugBuf)
 	{
-		foreach (array_slice($resultAry, 1) as $ary)
+		$imax = count($resultAry);
+		for ($i = 1; $i < $imax; $i++)
 		{
+			$ary = $resultAry[$i];
 			$label = htmlspecialchars($ary[0], ENT_QUOTES, 'utf-8');
 			$labelBuf[] = "'$label'";
 			$dataBuf[] = $ary[1];
