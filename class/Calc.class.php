@@ -135,9 +135,13 @@ class Calc
 			 * @var string DBに入力する都道府県
 			 */
 			$tdfk = '';
-			if (preg_match('/\A東京都|北海道|(?:京都|大阪)府|.{6,9}県/', $address, $mat))
+			foreach (Config::MASTER_TDFK_ARY as $masterTdfk)
 			{
-				$tdfk = $mat[0];
+				if (str_starts_with($address, $masterTdfk))
+				{
+					$tdfk = $masterTdfk;
+					break;
+				}
 			}
 
 			$stmt->bindValue(1, $tdfk, PDO::PARAM_STR);
